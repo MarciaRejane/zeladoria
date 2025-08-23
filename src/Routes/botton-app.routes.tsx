@@ -1,15 +1,20 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { useTheme } from "styled-components/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { HouseIcon, ChalkboardIcon, PlusSquareIcon, UserCircleIcon } from "phosphor-react-native";
+import { TouchableOpacity } from "react-native";
 
 import { Home } from "@screens/Home";
 import { Classroom } from "@screens/classroom";
-import { TouchableOpacity } from "react-native";
+import { Profile } from "@screens/Profile";
+import { Login } from "@screens/Login";
+import theme from "@theme/index";
+
 
 export type BottomAppParamList = {
     home: undefined;
     classroom: undefined;
+    profile: undefined;
+    login: undefined;
 
 }
 
@@ -30,7 +35,7 @@ export function BottomApp() {
             style={{ alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}
           />),
         tabBarStyle: {
-          backgroundColor: "#fffff",
+          backgroundColor: theme.COLORS.MIDNIGHT_BLUE,
           borderTopWidth: 0,
           height: 60 + insets.bottom,
         }
@@ -45,6 +50,13 @@ export function BottomApp() {
         name="classroom"
         component={Classroom}
       />
+
+      <Screen 
+        name="profile"
+        component={Profile}
+      />
+
+     
     </Navigator>
   )
 }
