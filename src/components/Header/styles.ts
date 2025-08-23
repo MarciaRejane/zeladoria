@@ -5,11 +5,14 @@ import styled from "styled-components/native";
 
 export const HeaderContainer = styled.View`
     width: 100%;
-    height:70px;
+    height:100px;
     flex-direction: row;
     align-items: center;
-    background-color: ${({theme}) => theme.COLORS.DARK_BLUE};
-    padding-top:10px;
+    background-color: ${({theme}) => theme.COLORS.MIDNIGHT_BLUE};
+    padding-top:30px;
+    position: absolute;
+    top:0;
+    z-index: 100;
 `;
 
 export const ScreenName = styled.Text`
@@ -30,5 +33,5 @@ export const BackButton = styled.TouchableOpacity.attrs({
 
 export const BackIcon = styled(CaretLeftIcon).attrs({
     size: 30,
-    color: theme.COLORS.WHITE
+    color: theme.COLORS.LIGHT_GRAY
 })``;
